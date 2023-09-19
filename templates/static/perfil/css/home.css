@@ -1,0 +1,115 @@
+.card{
+
+    width: 100%;
+    background-color: var(--main-color);
+    padding: 20px;
+
+}
+
+.saldo{
+    border-left: 2px solid var(--contrast-color);
+    padding-left: 10px;
+}
+
+.fonte-destaque{
+
+    font-weight: bold;
+    font-size: 25px;
+
+}
+
+.font-light{
+
+    font-weight: 200;
+
+}
+
+.hr-borda{
+    color: var(--dark-color);
+}
+
+.lista-conta{
+    background-color: var(--dark-color);
+    padding: 8px;
+    border-radius: 10px;
+
+}
+.total-conta{
+    color: #B9F1D6;
+    font-weight: 200;
+    float: right;
+}
+
+.botao-tabela{
+
+    background-color: var(--minhacor-color);
+    border-radius: 8px;
+    color: #ffffff
+  
+}
+
+
+.botao-principal{
+
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+
+    padding: 10px;
+    background-color: var(--minhacor-color);
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+
+}
+
+.despesa{
+    border-right: 2px solid var(--differential-color);
+    text-align: right;
+    padding-right: 10px;
+}
+
+.negativo{
+    color: var(--differential-color);
+}
+
+.positivo{
+    color: var(--contrast-color);
+}
+
+
+.icone-setas{
+    width: 50%;
+    display: inline;
+}
+
+
+
+.btn_menu{
+    
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+    height: 100%;
+}
+
+
+div.container {
+    display: flex;
+    height: 100%;
+    background: -webkit-linear-gradient(top, #088fad 20%, #00d5ff 100%);
+   
+   margin-top : 2%;
+
+}
+
+.div_1{
+
+    margin:5px;
+    width: 20%;
+  
+    background-color: magenta;
+   
+}
+

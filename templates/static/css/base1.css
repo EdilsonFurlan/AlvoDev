@@ -1,0 +1,17 @@
+body{
+    background-color: #3f3f3f !important;
+    color: white !important;
+}
+
+
+:root{
+     
+    --main-color: #2B2B2B;
+    --dark-color: #1C1A1A;
+    --contrast-color: #69D2CD;
+    --differential-color: #E96363; 
+    --minhacor-color: #f7731b;
+    --div_tabela-color: #585858;
+
+}
+

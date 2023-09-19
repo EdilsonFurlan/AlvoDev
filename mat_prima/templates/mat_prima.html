@@ -1,0 +1,93 @@
+{% extends 'bases/base.html' %}
+{% block 'head' %}
+{% load static %}
+
+ <!--   CSS Geral   -->
+ <link href="{% static 'perfil/css/home.css' %}" rel="stylesheet">
+
+
+{% endblock 'head' %}
+{% block 'titulo' %}Lista de Mat Primas{% endblock 'titulo' %}
+
+{% block 'body' %}
+<div class='container' style="margin-top: 30px;">
+    <h3 style="text-align: center;" >Matéria Prima por Categoria</h3>
+    <h5> Categoria : {{categ.nome}}</h5>
+ 
+ <hr>
+ <div style="display: inline;">
+    <div style="background-color: #585858; overflow-y: scroll;max-height: 450px; width: 55%;float: left; text-align: center; ">
+        <span>Lista de Matéria Prima</span>
+        <hr>
+<table class="table table-striped table-bordered table-sm">
+
+   
+    
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mat in matpri %}
+            <tr>
+                <td style="text-align: left;">{{mat.nome}}</td>
+                <td><button style="float: right;" class="botao-tabela">Alterar</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    
+    
+    
+  </table>
+</div>
+
+
+        <div style="background-color: #585858; width: 40%; float: right; text-align: center;">
+            <span>Cadastro de nova Materia Prima</span>
+            <hr>
+            <form style="margin: 5px;" action="{% url 'cadastrar_matprima_url' %}" method="POST"> {% csrf_token %}
+                <input type="hidden" name="categoria" value="{{categ.id}}">
+                <label style="float: left;">Nome Mat Prima : </label>
+                <input name="nome" style="width: 100%" type="text" placeholder="Nome Matéria Prima">
+                
+                <span>Tags:</span>
+                <select name="tags" multiple class="form-select">
+                    {% for tag in categ_matprima %}
+                        <option value="{{tag.id}}">{{tag}} </option>
+                    {% endfor %}
+                </select> 
+                
+                
+                <br><br><br>
+                <input style="width: 100%; background-color: #f7731b; border-radius: 10px;" type="submit" class="botao-tabela" value="Adicionar">
+            </form>
+        </div>
+             {% comment %} <div style="border-color: chocolate; width: 45%; right: 0%;"></div> {% endcomment %}
+   
+
+    </div>
+  
+</div>
+
+<div style="background-color: #585858; width: 50%; float: right; margin-top: 120px; text-align: center;">
+    <span>Cadastro de nova Categoria</span>
+    <hr>
+    <form style="margin: 5px;" action="{% url 'cadastrar_categoria_url' %}" method="POST"> {% csrf_token %}
+        <label style="float: left;">Nome Categoria : </label>
+        <input name="nome" style="width: 100%" type="text" placeholder="Nome Categoria">
+        <hr>
+        <label style="float: left;">Preco Unitario : </label>
+        <input name="preco_unit" style="width: 100%" type="text" placeholder="Preço Unitário">
+        <hr>
+        <label style="float: left;">Unidade : </label>
+        <input name="unidade" style="width: 100%" type="text" placeholder="Unidade">
+        
+        <br><br>
+        <input style="width: 100%; background-color: #f7731b; border-radius: 10px;" type="submit" class="botao-tabela" value="Adicionar">
+    </form>
+</div>
+
+
+{% endblock 'body' %}
